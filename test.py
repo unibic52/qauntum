@@ -1,5 +1,5 @@
 import random
-from quantum_key_generator import QuantumKeyGenerator  
+from sender import QuantumKeyGenerator  
 
 public_key=[]
 key = "10101011"

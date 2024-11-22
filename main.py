@@ -1,25 +1,20 @@
-import random
-from quantum_key_generator import QuantumKeyGenerator
-import receiver
+from sender import QuantumKeyGenerator
+from receiver import QuantumReceiver
 
 
 sender_public_key = []
 reciver_public_key = []
-new_key = []
+
 key = "10101001"
 
 qkg = QuantumKeyGenerator(key)
-polar1 = qkg.run()
-new_key = receiver.receiver1(polar1)
+rkg = QuantumReceiver()
+rkg.receiver(qkg.run())
 
-sender_public_key = qkg.public_key
-reciver_public_key = receiver.rec_public_key
+sender_key = qkg.new_key(rkg.rec_public_key)
+receiver_key = rkg.decode(qkg.public_key)
 
-
-
-sender_key = qkg.new_key(reciver_public_key)
-receiver_key = 
 
 print(sender_key)
-
+print(receiver_key)
 
