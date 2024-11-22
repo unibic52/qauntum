@@ -14,7 +14,9 @@ class QuantumKeyGenerator:
     
     def generate_public_key(self):
         """Randomly selects a basis for each bit in the key."""
-        self.public_key = [random.choice(self.basis) for _ in range(len(self.key))]
+        self.public_key = [random.choice(self.basis) for _ in range(0, 8)]
+        return(self.public_key)
+
     
     def find_key(self, category, value):
         """Finds the polarization state key for a given category and value."""
@@ -34,8 +36,5 @@ class QuantumKeyGenerator:
         return self.polar
 
 
-key = "10101011"
-qkg = QuantumKeyGenerator(key)
-polar = qkg.run()
 
-print("Polarization States:", polar)
+
