@@ -15,8 +15,11 @@ new_key = receiver.receiver1(polar1)
 sender_public_key = qkg.public_key
 reciver_public_key = receiver.rec_public_key
 
-print(new_key)
 
-sender_key = 
+
+sender_key = qkg.new_key(reciver_public_key)
+receiver_key = 
+
+print(sender_key)
 
 

@@ -5,6 +5,7 @@ class QuantumKeyGenerator:
         self.key = key  # The binary key to encode
         self.public_key = []  # Stores the randomly chosen basis for each bit
         self.polar = []  # Stores the polarization states
+        self.binary = []
         self.basis = ['rectilinear', 'diagonal']  # Available bases
         self.states = {
             'rectilinear': {'--': 0, '|': 1},
@@ -34,6 +35,19 @@ class QuantumKeyGenerator:
         self.generate_public_key()
         self.encode_key()
         return self.polar
+    
+    def new_key(self, recpub):
+
+          
+        for x in range(0,8):
+            try: 
+                self.binary.append(self.states[recpub[x]][self.polar[x]])
+            except KeyError:
+                pass
+        return self.binary
+
+
+
 
 
 
